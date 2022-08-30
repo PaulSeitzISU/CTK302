@@ -8,4 +8,5 @@ function draw() {
   fill('white') ;
   textSize(32) ;
   text("hello world!", 250, 250) ;
+  text("save tough vs code", 100, 100)
 }
