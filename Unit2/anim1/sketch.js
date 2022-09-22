@@ -1,5 +1,5 @@
 let x1 = 2,x2 = 1,x3 = 3;
-let speed1 = 1,speed2 = 1,speed3 = 1;
+let speed1 = 2,speed2 = 1,speed3 = 3;
 let f1, f2, f3;
 
 

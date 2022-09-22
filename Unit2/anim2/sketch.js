@@ -11,7 +11,7 @@ function draw() {
   avatar();
   x += 5;
   if(x > width) {
-    x = 0
+    x = -300
   }
 }
 
