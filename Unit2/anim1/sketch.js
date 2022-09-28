@@ -26,14 +26,14 @@ function draw() {
   fill("white");
   textSize(128);
   textFont(f1, 48);
-  text("word or phrase", x2, 250);
+  text("through thick and thin", x2, 250);
   pop;
 
   push;
   fill("white");
   textSize(128);
   textFont(f1, 48);
-  text("word or phrase", x3, 400);
+  text("Don't even worry about it", x3, 400);
   pop;
 
   x1 += 2.5 * speed1;
