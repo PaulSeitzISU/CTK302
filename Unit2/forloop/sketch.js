@@ -7,5 +7,8 @@ function setup() {
 function draw() {
 background(220);
 for (let i = 0; i < width; i++) {
-  rect(i,100,20,20);}
+  for (let j = 0; i < width; j++) {
+  
+    rect(i,j,20,20);}
+  }
 }
