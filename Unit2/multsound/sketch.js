@@ -1,9 +1,10 @@
 let s1, s2, s3;
-
+let p1;
+let f1;
 let state = -1;
 function setup() {
   createCanvas(800, 800);
-
+ textAlign(CENTER)
 }
 
 function preload () {
@@ -11,14 +12,20 @@ function preload () {
   s2 = loadSound("assets/dreams.mp3");
   s3 = loadSound("assets/hey.mp3");
 
+  p1 = loadImage("assets/nature.jpg")
+
+  f1 = loadFont("assets/lemonmilk.otf");
 
 }
 
 function draw() {
 background(220);
+image(p1,0,0,800,800)
 switch (state){
   case -1:
-    text("please click", 400, 400)
+    fill("white")
+    textFont(f1,48);
+    text("please click", width/2, height/2)
     break;
   case 0:
     if (!s1.isPlaying())
