@@ -11,17 +11,16 @@ function draw() {
 switch(state){
   case 0:
     background("red");
-    text("go go gog gog gog gog gog",width/2, height/2);
+    text("What do you all a fancy sea creature? Sofishticated",width/2, height/2);
   break;
   case 1:
     
     background("blue");
-    text("go go gog gog gog gog gog",width/2, height/2);
-  break;
+    text(" What kind of tea is sometimes hard to swallow? Reality",width/2, height/2);
   case 2:
     background("yellow");
 
-    text("go go gog gog gog gog gog",width/2, height/2);
+    text("What is the definition of a farmer? Someone is good in their field.",width/2, height/2);
   break;
 
 

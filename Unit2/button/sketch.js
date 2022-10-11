@@ -10,17 +10,17 @@ function draw() {
 switch(state){
   case 0:
     background("red");
-    text("go go gog gog gog gog gog",width/2, height/2);
+    text("What did the egg say to the frying pan? You crack me up",width/2, height/2);
   break;
   case 1:
     
     background("blue");
-    text("go go gog gog gog gog gog",width/2, height/2);
+    text("How do bulls write? With a bullpen.",width/2, height/2);
   break;
   case 2:
     background("yellow");
 
-    text("go go gog gog gog gog gog",width/2, height/2);
+    text("How do you get an alien baby to sleep? You rocket",width/2, height/2);
   break;
 }
 
