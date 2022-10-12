@@ -2,6 +2,7 @@ let timer = 5;
 let state = 0;
 function setup() {
   createCanvas(500, 500);
+  rectMode(CENTER);
 
 }
 
@@ -35,27 +36,41 @@ switch(state){
           fill('red');
           push;
 
-          rect(0,0,i+j,i+j);
-          rotate(1);
+          rect(width/2,height/2,i+j,i+j);
+          axis = createVector(width/2,height/2)
+          rotate(1/2);
 
-          translate(width/2,height/2);
+         // translate(width/2,height/2);
 
           pop;
 }
 }
 
   break;
-  case 3:
-    
+  case 3: 
+ for(let j = 0;j < 225;j = j += 2.25){
+    for(let i = 100;i > 0 ;i--){
+        fill(0,0,random(0,j))
+ellipse(width/2,height/2,i*10,i*10);
+}
+}
 
   break;
   case 4:
-    
+    for (var j = 0; j < height; j += 25)
+    for (var i = 0; i < width; i += 25) {
+      fill(random(.5)*i, random(.5) * j, random(.15)*i*j);
+      ellipse(i, j, 20, 20);
+    }
 
     break;
     case 5:
-    
-
+      for (var j = 0; j < height; j += 25){
+      for (var i = 0; i < width; i += 25) {
+        fill(0, random(.5) * j, random(.05)*i);
+        rect(i, j, 20, 20);
+      }
+    }
       break;
 }
 
@@ -63,7 +78,8 @@ switch(state){
 
 function mouseReleased() {
   state++;
-  if(state > 5)
-  state = 0;
+  if(state > 5){
+    state = 0;
+  }
 }
 
