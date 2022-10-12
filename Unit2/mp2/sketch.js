@@ -13,6 +13,7 @@ let w = 0, h = 0;
 let centerEye
 
 let mic, fft;
+var vol = 0;
 
 let letterArry = [];
 
@@ -109,9 +110,10 @@ text("Yes!!",width/2,height/2)
     background(220);
 
 
-  fill("black")
-    text("Gathering Audio Sample", width/2 , height/8)
     spectrumLoad();
+    
+  fill("black")
+  text("Gathering Audio Sample", width/2 , height/8)
     timer -= .1
     if(timer < 0){
       state++;
@@ -208,7 +210,8 @@ class Letter {
 
 function spectrumLoad(){
   stroke(51);
-  noFill();
+  background(200);
+  noFill()
   let spectrum = fft.analyze();
 
   beginShape();
