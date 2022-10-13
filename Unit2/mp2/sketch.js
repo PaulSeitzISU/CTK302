@@ -273,5 +273,6 @@ function mouseReleased() {
   if (state == 0 && width/2 - 100 < mouseX && mouseX < width/2 + 100 && height/2 - 100 < mouseY && mouseY < height/2 + 100){
     state++;
   }
-  
+  getAudioContext().resume();
+
   }
