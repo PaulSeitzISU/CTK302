@@ -140,7 +140,7 @@ for(let i = 0; i  < letterArry.length; i++){
         timer -= .1
         if(timer < 0){
           state++;
-          timer = 5;
+          timer = 10;
         }
 
   break;
