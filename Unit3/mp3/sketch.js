@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let cars = [];
 let planets = []
 let maxCars = 40;
@@ -10,10 +9,12 @@ let direction = 1;
 let rawInput
 let currentPlayer
 let state = 0;
+let song
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   zeroWidth = [0,width]
+  song = loadSound('assets/Guru.mp3');
   planets[0] = loadImage("assets/planet1.png")
   planets[1] = loadImage("assets/planet2.png")
   planets[2] = loadImage("assets/planet3.png")
@@ -46,13 +47,19 @@ switch(state){
       imageMode(CORNER);
 
       background(BadEnding);
-
+      currentPlayer = null;
+      for(let i = 0; i < cars.length; i++){
+        cars.splice(i,1);
+      }
       break;
       case 3:
         imageMode(CORNER);
 
         background(GoodEnding);
-
+        currentPlayer = null;
+        for(let i = 0; i < cars.length; i++){
+          cars.splice(i,1);
+        }
         break;
 
 
@@ -140,9 +147,15 @@ function game(){
 }
 
 function mouseClicked() {
-  if (state == 0) {
+  if (state == 0 || state == 2 || state == 3 ) {
     state = 1;
   }
+
+  if (!song.isPlaying()) {
+    song.play();
+    background(0, 255, 0);
+  }
+
   }
 
 
@@ -229,12 +242,3 @@ class Player {
     }
     
 } 
-=======
-function setup() {
-  createCanvas(500, 500);
-}
-
-function draw() {
-
-}
->>>>>>> edaf6c54acaef14f5ac37970be50519dfdd8f966
