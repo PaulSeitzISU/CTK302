@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let cars = [];
 let planets = []
 let maxCars = 40;
@@ -228,3 +229,12 @@ class Player {
     }
     
 } 
+=======
+function setup() {
+  createCanvas(500, 500);
+}
+
+function draw() {
+
+}
+>>>>>>> edaf6c54acaef14f5ac37970be50519dfdd8f966
