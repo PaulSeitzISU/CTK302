@@ -83,24 +83,24 @@ function game(){
         }
         else if(keyCode == 83){
         rawInput.y = 3
-        }
+        } else{
+          rawInput.y = 0;
   
+        if(keyCode == 65){
+          rawInput.x = -3;
+          }
+          else if(keyCode == 68){
+          rawInput.x = 3
+          }else{
+            rawInput.x = 0;
+          }
   
-    }   else{
-      rawInput.y = 0;
-    }
-  
-    if(keyIsPressed){
-      if(keyCode == 65){
-        rawInput.x = -3;
-        }
-        else if(keyCode == 68){
-        rawInput.x = 3
-        }
-     
-    }   else{
+    }  
+    }else{
       rawInput.x = 0;
+      rawInput.y = 0
     }
+
   
     currentPlayer.display();
     currentPlayer.move();
