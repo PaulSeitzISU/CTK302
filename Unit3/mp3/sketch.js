@@ -32,7 +32,7 @@ function draw() {
 switch(state){
   case 0:
     imageMode(CORNER);
-
+  
     background(MainmenuImage);
     break;
   case 1:
