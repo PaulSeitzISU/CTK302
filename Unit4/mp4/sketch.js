@@ -142,13 +142,14 @@ function draw() {
   stroke("white"); 
   text("");
   rect(0,(height/8)*7,width,height/8)
-
+  noStroke()
       break;
   }
 
 
 
-}
+}[oubAEGVONI'ADVS"ozdvnkDvknp
+DBpnDbsp]
 
 class FirstAnimal {
 
