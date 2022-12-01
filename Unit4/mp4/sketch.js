@@ -49,6 +49,7 @@ function setup() {
     Cat[6] = loadImage("assets/pet7.png")
     Cat[7] = loadImage("assets/pet8.png")
     Cat[8] = loadImage("assets/pet9.png")
+    Sun = loadImage("assets/sun.png")
 
     
   totalCats = Cat.length;
@@ -101,6 +102,7 @@ function draw() {
 
     case 1:
       background("#11b8f5");
+      image(Sun);
       fill("black");
       text("What is the weather in " + weather.name + "?", 20, 20);
       text("windspeed is " + windspeed, 20, 40);
