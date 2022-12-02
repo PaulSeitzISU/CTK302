@@ -117,12 +117,13 @@ function draw() {
       break;
 
     case 1:
+
+    textSize(16);
       background("lightblue");
       fill("black");
-      text("What is the weather in " + weather.name + "?", 20, 20);
-      text("windspeed is " + windspeed, 20, 40);
-       text("temperature is " + temperature, 20, 60);
-      text("humidity is " + humidity + " %", 20, 80);
+      text("windspeed is " + windspeed, 80, 40);
+       text("temperature is " + temperature, 80, 60);
+      text("humidity is " + humidity + " %", 80, 80);
 
 
       // cloud
