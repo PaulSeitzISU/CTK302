@@ -60,7 +60,7 @@ function setup() {
   totalClouds = Clouds.length;
   totalCats = Cat.length;
 print(totalCats);
-print(totalClouds);
+print(maxClouds);
   // HERE is the call to get the weather. We build the string first.
 
 
@@ -95,7 +95,7 @@ function gotData(data) {
   cloudCover = weather.main.clouds;
 
 maxAnimals *=  (weather.main.humidity / 100)
-maxClouds *= (weather.main.clouds / 100)
+maxClouds *= (weather.clouds.all / 100)
 //maxClouds == 50
 }
 
@@ -246,9 +246,9 @@ class Animal {
 
   class Cloud {
     constructor() {
-      this.pos = createVector((-50, height/2));
+      this.pos = createVector((-50, random(0, 150)));
       this.velocity = random(.1,.5)* weather.wind.speed;
-      this.scale = random(100, 500);
+      this.scale = random(300, 500);
       this.fogPic = round(random(0, 1))
       print("cloud constructed"); 
     }
@@ -261,7 +261,7 @@ class Animal {
       //this.pos.add(this.velocity);
       this.pos.x += this.velocity;
       if (this.pos.x >= width) {
-        this.pos.x = -100;
+        this.pos = createVector(-100, random(0, 150));
         print("cloud loop")
       }
     }
