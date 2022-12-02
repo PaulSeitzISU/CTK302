@@ -15,6 +15,7 @@ let soundEffects = []
 let maxAnimals = 50
 let firstLoad = true;
 let totalCats;
+let fonts = [];
 
 navigator.geolocation.getCurrentPosition(getposition);
 
@@ -50,6 +51,7 @@ function setup() {
     Cat[7] = loadImage("assets/pet8.png")
     Cat[8] = loadImage("assets/pet9.png")
 
+    fonts[0] = loadFont("assets/Font/school.ttf")
     
   totalCats = Cat.length;
 print(totalCats);
@@ -75,6 +77,8 @@ print(totalCats);
   
 
   loadJSON(myTotalString, gotData); // that gotData function happens when JSON comes back.
+
+  textAlign(CENTER)
 }
 
 
@@ -140,8 +144,12 @@ function draw() {
   }
   strokeWeight(4);
   stroke("white"); 
-  text("");
   rect(0,(height/8)*7,width,height/8)
+  noStroke()
+  fill("white")
+  textFont(fonts[0])
+  textSize(64);
+  text("What is the weather in " + weather.name + "?", width/2, (height/16)*15.25);
 
       break;
   }
