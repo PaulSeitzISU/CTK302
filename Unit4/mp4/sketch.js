@@ -19,6 +19,7 @@ let maxClouds = 5
 let firstLoad = true;
 let totalCats;
 let totalClouds;
+let fonts = [];
 
 navigator.geolocation.getCurrentPosition(getposition);
 
@@ -56,6 +57,9 @@ function setup() {
 
     Fog[0] = loadImage("assets/cloud1.png")
     Fog[1] = loadImage("assets/cloud2.png")
+
+    fonts[0] = loadFont("assets/Font/school.ttf")
+
     
   totalClouds = Clouds.length;
   totalCats = Cat.length;
@@ -83,6 +87,8 @@ print(maxClouds);
   
 
   loadJSON(myTotalString, gotData); // that gotData function happens when JSON comes back.
+
+  textAlign(CENTER)
 }
 
 
@@ -111,7 +117,7 @@ function draw() {
       break;
 
     case 1:
-      background(200);
+      background("lightblue");
       fill("black");
       text("What is the weather in " + weather.name + "?", 20, 20);
       text("windspeed is " + windspeed, 20, 40);
@@ -158,8 +164,12 @@ function draw() {
   }
   strokeWeight(4);
   stroke("white"); 
-  text("");
   rect(0,(height/8)*7,width,height/8)
+  noStroke()
+  fill("white")
+  textFont(fonts[0])
+  textSize(64);
+  text("What is the weather in " + weather.name + "?", width/2, (height/16)*15.25);
 
       break;
   }
