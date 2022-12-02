@@ -7,14 +7,18 @@ let x = 0;
 let windspeed = 0;
 let temperature = 0;
 let humidity = 0;
+let Clouds = []
+let Fog = []
 var lat
 var lon
 let Animals = [] 
 let Cat = []
 let soundEffects = []
 let maxAnimals = 50
+let maxClouds = 5
 let firstLoad = true;
 let totalCats;
+let totalClouds;
 
 navigator.geolocation.getCurrentPosition(getposition);
 
@@ -50,9 +54,13 @@ function setup() {
     Cat[7] = loadImage("assets/pet8.png")
     Cat[8] = loadImage("assets/pet9.png")
 
+    Fog[0] = loadImage("assets/cloud1.png")
+    Fog[1] = loadImage("assets/cloud2.png")
     
+  totalClouds = Clouds.length;
   totalCats = Cat.length;
 print(totalCats);
+print(totalClouds);
   // HERE is the call to get the weather. We build the string first.
 
 
@@ -84,8 +92,11 @@ function gotData(data) {
   windspeed = weather.wind.speed;
   temperature = weather.main.temp;
   humidity = weather.main.temp;
+  cloudCover = weather.main.clouds;
 
 maxAnimals *=  (weather.main.humidity / 100)
+maxClouds *= (weather.main.clouds / 100)
+//maxClouds == 50
 }
 
 
@@ -110,7 +121,14 @@ function draw() {
 
       // cloud
 
-  
+      for (let i = 0; i < Clouds.length; i++) {
+        Clouds[i].display()
+        Clouds[i].move()
+      }
+      
+      if (Clouds.length < maxClouds) {
+        Clouds.push(new Cloud());
+      }
 
       for(let i = 0; i < Animals.length; i++){
             Animals[i].display()
@@ -226,3 +244,31 @@ class Animal {
       
   } 
 
+  class Cloud {
+    constructor() {
+      this.pos = createVector((-50, height/2));
+      this.velocity = random(.1,.5)* weather.wind.speed;
+      this.scale = random(100, 500);
+      this.fogPic = round(random(0, 1))
+      print("cloud constructed"); 
+    }
+    
+    display() {
+      image(Fog[this.fogPic],this.pos.x,this.pos.y, this.scale, this.scale);
+    }
+
+    move() {
+      //this.pos.add(this.velocity);
+      this.pos.x += this.velocity;
+      if (this.pos.x >= width) {
+        this.pos.x = -100;
+        print("cloud loop")
+      }
+    }
+
+
+  }
+
+  function mouseReleased() {
+    print(mouseX + ", " + mouseY);
+  }
