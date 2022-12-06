@@ -172,12 +172,12 @@ function draw() {
   textSize(64);
   text("What is the weather in " + weather.name + "?", width/2, (height/16)*15.25);
 
+
       break;
   }
-
-
-
 }
+
+
 
 class FirstAnimal {
 
