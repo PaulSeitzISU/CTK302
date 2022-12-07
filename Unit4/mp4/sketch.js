@@ -20,6 +20,9 @@ let firstLoad = true;
 let totalCats;
 let totalClouds;
 let fonts = [];
+let sun;
+let cloudPer;
+
 
 navigator.geolocation.getCurrentPosition(getposition);
 
@@ -54,6 +57,9 @@ function setup() {
     Cat[6] = loadImage("assets/pet7.png")
     Cat[7] = loadImage("assets/pet8.png")
     Cat[8] = loadImage("assets/pet9.png")
+
+    sun = loadImage("assets/sun.png")
+
 
     Fog[0] = loadImage("assets/cloud1.png")
     Fog[1] = loadImage("assets/cloud2.png")
@@ -99,7 +105,7 @@ function gotData(data) {
   temperature = weather.main.temp;
   humidity = weather.main.temp;
   cloudCover = weather.main.clouds;
-
+  cloudPer = weather.clouds.all
 maxAnimals *=  (weather.main.humidity / 100)
 maxClouds *= (weather.clouds.all / 100)
 //maxClouds == 50
@@ -117,9 +123,17 @@ function draw() {
       break;
 
     case 1:
-
     textSize(16);
-      background("lightblue");
+if(cloudPer < 80){
+  background("lightblue");
+  image(sun,0,0,width,height)
+} else {
+  background("lightgray");
+
+}
+
+
+
       fill("black");
       text("windspeed is " + windspeed, 80, 40);
        text("temperature is " + temperature, 80, 60);
