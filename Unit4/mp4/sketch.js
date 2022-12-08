@@ -125,7 +125,7 @@ function draw() {
     case 1:
     textSize(16);
 if(cloudPer < 80){
-  background("lightblue");
+  background("#11b8f5");
   image(sun,0,0,width,height)
 } else {
   background("lightgray");
@@ -297,3 +297,4 @@ class Animal {
   function mouseReleased() {
     print(mouseX + ", " + mouseY);
   }
+0
