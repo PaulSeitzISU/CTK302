@@ -297,4 +297,3 @@ class Animal {
   function mouseReleased() {
     print(mouseX + ", " + mouseY);
   }
-0
