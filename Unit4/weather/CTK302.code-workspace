@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../../../../../Local files/CTK302"
+	},
+	{
+		"path": "../.."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "CTK302"
+  }
+}
