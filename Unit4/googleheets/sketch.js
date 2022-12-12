@@ -28,7 +28,7 @@ function gotData(data) {
   // iterate through the array of data and create an object and push it on an array called bubbles
   for (let i = 0; i < data.length; i++) {
     bubbles.push(new Bubble(data[i]["What's your name"],
-                            data[i]["What do you pick up"])); // THESE Name and Shape MUST match column names in your spreadsheet!
+                            data[i]["Portal Appears  "])); // THESE Name and Shape MUST match column names in your spreadsheet!
   }
 
 }
@@ -59,7 +59,7 @@ class Bubble {
 
 
   display() {
-    if (this.shape == "Square") {
+    if (this.shape == "Enter it") {
       rect(this.pos.x, this.pos.y, 50, 50);
     } else {
       ellipse(this.pos.x, this.pos.y, 50, 50);
