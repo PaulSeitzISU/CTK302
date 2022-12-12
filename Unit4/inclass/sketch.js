@@ -7,25 +7,28 @@ let bgImage;
 let xPosition = 0;
 let yPosition = 0;
 let x = 0, y = 0, z = 0 ; // accelerometer data
-
+let f1;
 
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
 
+  f1 = loadFont("assets/lemonmilk.otf");
 
 
   bunnyImage = loadImage("assets/planet1.png");
   bgImage = loadImage("assets/bg.jpg");
 
-  imageMode(CENTER);
+  //imageMode(CENTER);
   rectMode(CENTER);
 
 }
 
 function draw() {
+  imageMode(CORNER);
 
   background(bgImage); // light blue
+  imageMode(CENTER);
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
@@ -65,6 +68,7 @@ function draw() {
   noStroke();
   textSize(300);
   textAlign(CENTER);
+  textFont(f1, 128);
   text("WOW", width / 2, height / 2);
 
 }
