@@ -103,7 +103,7 @@ function gotData(data) {
   print(weather); // for debugging purposes, print out the JSON data when we get it.
   windspeed = weather.wind.speed;
   temperature = weather.main.temp;
-  humidity = weather.main.temp;
+  humidity = weather.main.humidity;
   cloudCover = weather.main.clouds;
   cloudPer = weather.clouds.all
 maxAnimals *=  (weather.main.humidity / 100)
